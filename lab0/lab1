@@ -1,0 +1,4 @@
+%%
+start {printf("Got start\n");}
+stop printf("Got stop\n");
+%%

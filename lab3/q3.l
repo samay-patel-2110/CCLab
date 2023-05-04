@@ -1,0 +1,43 @@
+%
+{
+#include<stdio.h>
+
+  int lineCount = 0;
+  int wordCount = 0;
+  int charCount = 0;
+
+%}
+
+%%[\n]
+{
+  lineCount++;
+  charCount += yyleng;
+}
+
+[^\t \ n] +
+{
+  if (yyleng >= 6)
+    {
+      wordCount;
+      charCount += yyleng;
+    }
+}
+
+%%int
+yywrap ()
+{
+  return 1;
+}
+
+int
+main ()
+{
+  printf ("Enter Sentence: ");
+  yylex ();
+  printf ("Number of lines: %d\n", lineCount);
+  printf ("Number of words: %d\n", wordCount);
+  printf ("Number of characters: %d\n", charCount);
+
+  return 0;
+
+}

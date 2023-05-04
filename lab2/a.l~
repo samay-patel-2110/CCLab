@@ -1,0 +1,8 @@
+%%
+[abc]   {printf("\nGot a or b or c:%s:%d\n",yytt
+ext,yytext[0]);}
+abc     {printf("Got \"abc\": %s\n",yytext);}
+[a-f]   {printf("Got a to f :%s:%d\n",yytext,yyy
+text[0]);}
+[^xyz]  {printf("not x or y or z: %s:%d\n",yytee
+xt,yytext[0]);}
