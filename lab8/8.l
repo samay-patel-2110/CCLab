@@ -1,5 +1,6 @@
 %{
 #include "y.tab.h"
+extern int yylval;
 %}
 
 %%
@@ -17,7 +18,8 @@
 "*"                { return OP; }
 "/"                { return OP; }
 "="                { return EQ; }
-[a-z]+             { yylval.strval = strdup(yytext); return VAR; }
+"#include <stdio.h> {return HEADER;}
+[a-z]+             { yylval = *yytext - 'a'; return VAR; }
 [ \t\r\n]          { } /* Ignore whitespace */
 .                  { yyerror("Invalid input"); }
 
