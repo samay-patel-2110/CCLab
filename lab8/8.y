@@ -7,7 +7,7 @@ void yyerror(char *);
 int yylex();
 %}
 
-%token LCB RCB LB RB SC COMA INT MAIN OP EQ VAR
+%token LCB RCB LB RB SC COMA INT MAIN OP EQ VAR HEADER
 %left OP
 %start program
 
